@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Add Room {% endblock %}
+
+{% block mainbody %}
+
+<br><br>
+<div class="d-flex justify-content-center">
+    <h4>Add Room</h4>
+
+
+   
+</div>
+<br>
+
+<div class="container card shadow-sm">
+          
+          <div class="card-body">
+
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+
+            <!-- <form method="POST" action="">
+              {% csrf_token %}
+
+
+              <div class="mb-3">
+                <label for="room-number" class="form-label">Room Number <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="room-number" name="room-number" placeholder="Enter room number" required />
+              </div>
+
+              <div class="mb-3">
+                <label for="category" class="form-label">Room Category <span class="text-danger">*</span></label>
+                <select class="form-select" id="category" name="category" required>
+                  <option value="" disabled selected>Select a category…</option>
+                   {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                
+                  {% endfor %} 
+                  <option value="">Single</option>
+                  <option value="">Double</option>
+                  <option value="">Delux</option>
+                </select>
+              </div>
+
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                <label class="form-check-label" for="switchCheckDefault">Occupied</label>
+              </div>
+              <br>
+             
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button">Submit</button>
+            </div>
+
+            </form> -->
+          </div>
+        </div>
+
+{% endblock %}

@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('rooms.urls')),
     path('guests/', include('guests.urls')),
+    path('payments/', include('payments.urls')),
 
     # path('', roomsList, name="roomsList"),
     # path('rooms', rooms , name="rooms"),

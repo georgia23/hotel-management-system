@@ -86,10 +86,27 @@
         </li>
 
         <!-- Payments -->
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-credit-card me-1"></i>Payments
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-door-open me-1"></i>Payments
           </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item" href="{% url 'paymentsList' %}">
+                <i class="bi bi-list-ul me-2"></i>Payment List
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'makePayment' %}">
+                <i class="bi bi-plus-circle me-2"></i>Make Payment
+              </a>
+          </ul>
         </li>
 
         <!-- Reports -->

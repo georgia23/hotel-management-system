@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% block title %} Payments List {% endblock %} 
+{% block mainbody %}
+
+<br /><br />
+<div class="d-flex justify-content-center">
+  <h4>Payments List</h4>
+</div>
+<br />
+
+<!-- Payments Table -->
+<div class="container shadow-sm">
+  <div class="card-body p-0">
+    <table class="table table-hover mb-0">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th> 
+          <th>Amount</th>
+          <th>Payment Type</th>
+          <th>Date Paid</th>
+          <th>Room</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for each in payments %}
+        <tr>
+          <td class="text-muted small align-middle">{{ forloop.counter }}</td>
+          <td class="align-middle fw-semibold">{{ each.first_name }}</td>
+          <td class="align-middle">{{ each.last_name }}</td>
+          <td class="align-middle">{{ each.amount }}</td>
+          <td class="align-middle">{{ each.payment_type }}</td>
+          <td class="align-middle">{{ each.date_paid }}</td>
+          <td class="align-middle">{{ each.room }}</td>
+          <td class="align-middle">
+            <a href="#" class="btn btn-outline-primary btn-sm me-1"><i class="fas fa-eye"></i>View</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

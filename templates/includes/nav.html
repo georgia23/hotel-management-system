@@ -62,10 +62,27 @@
         </li>
 
         <!-- Guests -->
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-people me-1"></i>Guests
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-door-open me-1"></i>Guests
           </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item" href="{% url 'guestsList' %}">
+                <i class="bi bi-list-ul me-2"></i>Guest List
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'addGuest' %}">
+                <i class="bi bi-plus-circle me-2"></i>Add Guest
+              </a>
+          </ul>
         </li>
 
         <!-- Payments -->

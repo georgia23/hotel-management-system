@@ -21,6 +21,7 @@ from rooms.views import rooms, roomsList, base, category, categoryList, editRoom
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('rooms.urls')),
+    path('guests/', include('guests.urls')),
 
     # path('', roomsList, name="roomsList"),
     # path('rooms', rooms , name="rooms"),

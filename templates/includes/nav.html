@@ -1,11 +1,94 @@
-<nav class="navbar bg-dark sticky-top bg-body-tertiary" data-bs-theme="dark">
-      <div class=" container">
-        <a class="navbar-brand" href="{% url 'roomsList' %}"><h3>Hotel Management System</h3></a>
 
-        
-        
-        <a href="{% url 'rooms' %}" class="btn btn-primary">Add Room</a>
-        <a href="{% url 'category' %}" class="btn btn-primary">Add Category</a>
-        <a href="{% url 'categoryList' %}" class="btn btn-primary">View Categories</a>
+<nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+  <div class="container">
+    <!-- Brand -->
+    <a
+      class="navbar-brand fw-bold fs-5 text-warning"
+      href="{% url 'roomsList' %}"
+    >
+      <i class="bi bi-building me-2"></i>Hotel Management
+    </a>
+
+    <!-- Toggler for mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNav"
+      aria-controls="mainNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Rooms Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-door-open me-1"></i>Rooms
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="dropdown-item" href="{% url 'roomsList' %}">
+                <i class="bi bi-list-ul me-2"></i>Room List
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'rooms' %}">
+                <i class="bi bi-plus-circle me-2"></i>Add Room
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="{% url 'categoryList' %}">
+                <i class="bi bi-tags me-2"></i>Category List
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'category' %}">
+                <i class="bi bi-tag me-2"></i>Add Category
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Guests -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="bi bi-people me-1"></i>Guests
+          </a>
+        </li>
+
+        <!-- Payments -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="bi bi-credit-card me-1"></i>Payments
+          </a>
+        </li>
+
+        <!-- Reports -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="bi bi-bar-chart me-1"></i>Reports
+          </a>
+        </li>
+      </ul>
+
+      
+      <div class="d-flex align-items-center gap-2">
+        <span class="text-secondary small">
+          <i class="bi bi-person-circle me-1"></i>Admin
+        </span>
       </div>
-    </nav>
+    </div>
+  </div>
+</nav>

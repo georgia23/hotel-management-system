@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
+
 {% block title %} Add Room {% endblock %}
 
 {% block mainbody %}
@@ -19,7 +22,7 @@
 
             <form method="post" novalidate>
               {% csrf_token %}
-              {{ form.as_p }}
+              {{ form | crispy }}
 
               <button class="btn btn-primary" type="submit">Submit</button>
             </form>

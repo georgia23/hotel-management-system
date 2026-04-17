@@ -17,7 +17,7 @@ class PaymentForm(forms.ModelForm):
 
     class Meta:
         model = Payment
-        fields = ['guest', 'amount', 'payment_type', 'payment_date']
+        fields = ['guest', 'amount', 'payment_type', 'payment_date', 'room']
         error_messages = {
             'guest': {
                 'required': "Please select a guest."
@@ -30,5 +30,8 @@ class PaymentForm(forms.ModelForm):
             },
             'payment_date': {
                 'required': "Please enter the payment date."
+            },
+            'room': {
+                'required': "Please select a room."
             }
         }

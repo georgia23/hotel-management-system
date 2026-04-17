@@ -35,3 +35,20 @@ class GuestForm(forms.ModelForm):
                 'required': 'Date registered is required.',
             },
         }
+
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if len(first_name) < 3:
+            raise forms.ValidationError("First name must be more than 2 characters.")
+        if not first_name.isalpha():
+            raise forms.ValidationError("First name must contain only letters.")
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if len(last_name) < 3:
+            raise forms.ValidationError("Last name must be more than 2 characters.")
+        if not last_name.isalpha():
+            raise forms.ValidationError("Last name must contain only letters.")
+        return last_name

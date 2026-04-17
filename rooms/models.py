@@ -15,5 +15,8 @@ class Room(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     status = models.BooleanField(max_length=20, default=False)
 
+    def __str__(self) -> str:
+        return self.room_number
+
 
 
